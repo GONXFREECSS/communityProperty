@@ -12,17 +12,14 @@ Page({
     password: ''
   },
   usernameInput: function (e) {
-    console.log(e.detail.value);
     this.setData({
       username: e.detail.value
     })
-    console.log(e.detail.value);
   },
   passwordInput: function (e) {
     this.setData({
       password: e.detail.value
     })
-    console.log(e.detail.value);
   },
   register:function(){
     wx.redirectTo({
@@ -32,7 +29,6 @@ Page({
   formSubmit: function (e) {
     var data = e.detail.value;
     var that = this;
-    console.log(data);
 
     util.getReq('api/denglu/login', data, function (data) {
       console.log(data.token)

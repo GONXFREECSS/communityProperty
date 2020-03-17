@@ -3,12 +3,11 @@ var app = getApp();
 Page({
   data: {
     statusType: [
-      { name: "未完成", page: 0 },
+      { name: '全部', page: 0 },
+      { name: "待处理", page: 0 },
       { name: "已完成", page: 0 }],
     currentType: 0,
-    list: [[], [], [], [], []],
-    goodsMap: [{}, {}, {}, {}, {}],
-    logisticsMap: [{}, {}, {}, {}, {}],
+    list: [],
     windowHeight: ''
   },
   onLoad(options) {
@@ -16,7 +15,7 @@ Page({
     var systemInfo = wx.getSystemInfoSync()
     this.setData({
       windowHeight: systemInfo.windowHeight,
-      currentType:options.id ? options.id:0
+      currentType: options.id ? options.id : 0
     })
   },
   // 点击tab切换 
@@ -41,22 +40,19 @@ Page({
       wx.hideLoading();
       var items = data.rows;
       items.forEach(element => {
-        var reg=/,$/gi;
-        element.img = element.img.replace(reg,"");
-        var imgs = element.img.split(',')
-        for(var i in imgs){
-          i = app.globalData.URL + i
-        }
+        var json = JSON.stringify(element)
+        element.json =json
       });
       that.setData({
-        list:data.rows
+        list: items
       })
+      console.log(that.data.list)
     })
   },
   orderDetail: function (e) {
-    var orderId = e.currentTarget.dataset.id;
+    var data = e.currentTarget.dataset.json
     wx.navigateTo({
-      url: "/pages/order-details/index?id=" + orderId
+      url: "/pages/repair/item?data=" + data
     })
   },
   onHide: function () {

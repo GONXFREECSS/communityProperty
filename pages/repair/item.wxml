@@ -2,7 +2,7 @@
   <view class="page__bd">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
     <form bindsubmit="formSubmit" >
-      <view class="weui-cells__title">确认报修人信息</view>
+      <view class="weui-cells__title">报修人信息</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -21,7 +21,7 @@
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">填写报修信息</view>
+      <view class="weui-cells__title">报修信息</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
@@ -51,16 +51,14 @@
       </view>
       <view class='pic-title'>
         <view class='pic-title-content'>
-         现场报修图片
+          现场图片
         </view>
       </view>
-      <view class="weui-cells weui-cells_after-title">
       <view class='pic-content'>
         <block wx:for="{{pics}}" wx:for-item="pic" wx:for-index='index'>
-          <image class="each-img" src='{{pic}}' bindtap='previewImg' data-index='{{index}}'>
+          <image class="each-img" src='{{pic}}'>
           </image>
         </block>
-      </view>
       </view>
       <view class="weui-btn-area">
         <button class="weui-btn" type="primary" form-type="submit">确定</button>
