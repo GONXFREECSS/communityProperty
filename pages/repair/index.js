@@ -39,7 +39,15 @@ Page({
     var postData = { code: "", page: 1, limit: 10, offset: 0 };
     util.req('api/sqwuye/sys/repairs/list', postData, function (data) {
       wx.hideLoading();
-      console.log(data.rows)
+      var items = data.rows;
+      items.forEach(element => {
+        var reg=/,$/gi;
+        element.img = element.img.replace(reg,"");
+        var imgs = element.img.split(',')
+        for(var i in imgs){
+          i = app.globalData.URL + i
+        }
+      });
       that.setData({
         list:data.rows
       })
