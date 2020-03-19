@@ -34,6 +34,30 @@ Page({
         img: '/img/repair.svg',
         text: '报修处理',
         cb: 'repair'
+      },
+      {
+        name: 'issue',
+        img: '/img/opendoor.svg',
+        text: '远程开门',
+        cb: 'issue'
+      },
+      {
+        name: 'car',
+        img: '/img/pwd.svg',
+        text: '动态密码',
+        cb: 'car'
+      },
+      {
+        name: 'houseregistration',
+        img: '/img/review.svg',
+        text: '房屋审核',
+        cb: 'houseregistration'
+      },
+      {
+        name: 'repair',
+        img: '/img/repair.svg',
+        text: '报修处理',
+        cb: 'repair'
       }
     ],
     notices:[
@@ -86,7 +110,7 @@ Page({
   },
   houseregistration: function(){
     wx.navigateTo({
-      url: '/pages/houseregistration/index',
+      url: '/pages/housing_audit/index',
     })
   },
   onShow: function() {},

@@ -8,12 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username: '',
+    phone: '',
     password: ''
   },
   usernameInput: function (e) {
     this.setData({
-      username: e.detail.value
+      phone: e.detail.value
     })
   },
   passwordInput: function (e) {
@@ -21,25 +21,26 @@ Page({
       password: e.detail.value
     })
   },
-  register:function(){
-    wx.redirectTo({
-      url: '/pages/register/index'
-    })
-  },
+  
   formSubmit: function (e) {
     var data = e.detail.value;
     var that = this;
-
-    util.getReq('api/denglu/login', data, function (data) {
-      console.log(data.token)
+    util.getReq('api/sqwuye/app/weChat/login', data, function (data) {
       if(data.code==0){
+        wx.showToast({
+          title: '登录成功',
+          icon: 'success',
+          duration: 2000
+        })
         wx.setStorageSync('token',data.token)
-        var data = {'nickName':'User','img':'/img/touxiang.jpg'}
-        app.setUserInfo(data)
+        // var data = {'nickName':'User','img':'/img/touxiang.jpg'}
+        app.setUserInfo(data.rep)
         console.log(app.globalData.userInfo)
         wx.switchTab({
           url: '/pages/index/index'
         })
+      }else{
+        
       }
     })
     util.clearError(that);

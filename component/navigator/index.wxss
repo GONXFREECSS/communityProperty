@@ -7,11 +7,11 @@
 }
 .scroll-view-x .scroll-view-item{
   display:inline-block;
-  margin:0 85rpx;
+  margin:0 75rpx;
   line-height: 33px;
   cursor: pointer;
 }
 .on{
-  border-bottom: 2px solid #1296dbed;
-  color: #1296dbed
+  border-bottom: 2px solid red;
+  color: red
 }

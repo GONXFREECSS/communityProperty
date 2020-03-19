@@ -1,4 +1,12 @@
 {
   "disableScroll":true,  
-  "navigationBarTitleText": "我的"
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "l-avatar":"/dist/avatar/index",
+    "l-grid":"/dist/grid/index",
+    "l-grid-item": "/dist/grid-item/index",
+    "l-icon":"/dist/icon/index",
+    "content-title": "/component/content-title/index",
+    "content-card": "/component/content-card/index"
+  }
 }

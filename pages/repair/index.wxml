@@ -7,18 +7,19 @@
     <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight-35}}px;margin-top:35px;">
       <block>
         <swiper-item wx:for="{{list}}">
-          <scroll-view scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1" bindscrolltolower="scrolltolower" style="height: {{windowHeight-35}}px;" hidden="{{item ? flase : true}}">
+          <scroll-view scroll-y="true" class="order-list" scroll-with-animation="true" lower-threshold="1"  style="height: {{windowHeight-35}}px;" hidden="{{item ? flase : true}}">
             <view class="a-order" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
               <view bindtap="orderDetail" data-json="{{item.json}}">
                 <view class="order-date">
-                  <view class="title-box">报修时间：{{item.faultTime}}</view>
+                  <view class="title-box">报修名称：{{item.content}}</view>
                 </view>
-                <view class="goods-info" data-id="{{item.id}}">
+                <view class="goods-info">
                   <view class="goods-des">
-                    <view>设备编号 : {{item.code}}</view>
-                    <view wx:if="{{item.content && item.content != ''}}">
+                    <view>申请时间 : {{item.createTime}}</view>
+                    <view>
                       故障描述： {{item.content}}
                     </view>
+                    <view style="color:{{item.isSolved==1?'green':'red'}}">处理状态：{{item.isSolved==1?'已处理':'待处理'}}</view>
                   </view>
                 </view>
               </view>
@@ -28,4 +29,5 @@
       </block>
     </swiper>
   </slideTab>
+  <loadmore mtype="{{mtype}}" hidden="{{hidden}}" nodata_str="已经没有更多了~"></loadmore> 
 </view>

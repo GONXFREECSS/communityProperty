@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText":"登记记录",
+    "usingComponents": {
+      "slideTab": "../../component/navigator/index",
+      "loadmore":"../../component/loadmore/index"
+    }
+}

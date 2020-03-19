@@ -1,0 +1,33 @@
+<view>
+  <slideTab tList="{{statusType}}" bind:changeCurrent="swichNav" currentTab="{{currentType}}">
+    <view class="no-order" hidden="{{list.length ? true : false}}">
+      <view class="text">暂无数据</view>
+    </view>
+    <swiper current="{{currentType}}" duration="300" bindchange="bindChange" style="height: {{windowHeight-35}}px;margin-top:35px;">
+      <block>
+        <swiper-item wx:for="{{list}}">
+          <scroll-view scroll-y="true" bindscrolltolower="lower" class="order-list" scroll-with-animation="true" lower-threshold="1" style="height: {{windowHeight-35}}px;" hidden="{{item ? flase : true}}">
+            <view class="a-order" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+              <view bindtap="orderDetail" data-json="{{item.json}}">
+                <view class="order-date">
+                  <view class="title-box">楼栋名称：{{item.buildingName}}</view>
+                </view>
+                <view class="goods-info">
+                  <view class="goods-des">
+                    <view>期数 : {{item.roomNumber}}</view>
+                    <view>栋数 : {{item.roomNumber}}</view>
+                    <view>房间号 : {{item.roomNumber}}</view>
+                    <view style="color:{{item.isVerify==1?'green':'red'}}">
+                      处理状态：{{item.isVerify==1?'已处理':'待处理'}}
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </slideTab>
+  <loadmore mtype="{{mtype}}" hidden="{{hidden}}" nodata_str="已经没有更多了~"></loadmore>
+</view>

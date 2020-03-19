@@ -1,5 +1,23 @@
 /**index.wxss**/
+.num {
+  color: #fc6517;
+  font-size: 42rpx;
+  font-style: italic;
+}
 
+.text {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 9rpx;
+}
+
+.grid-item {
+  height: 200rpx;
+} 
 .head {
   display: flex;
   flex-direction: column;
@@ -38,4 +56,51 @@
 .no-login text {
   line-height: 64px;
   margin-left: 10px;
+}
+/* pages/view/pages/avatar/index.wxss */
+.content {
+  padding-left: 70rpx !important;
+}
+.content-item {
+  margin-right: 80rpx;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-item {
+  color: #45526b;
+  font-size: 28rpx;
+}
+
+.avatar-bg {
+  background-color: #fde3cf !important;
+}
+
+.content-item-nick-row {
+  width: 240rpx;
+  height: 240rpx;
+  box-shadow: 0px 4rpx 16rpx 0px rgba(160, 160, 160, 0.2);
+  border-radius: 8rpx;
+  margin: 40rpx 80rpx 0 0;
+  
+}
+
+.content-item-nick-column {
+  width: 320rpx;
+  height: 240rpx;
+  box-shadow: 0px 4rpx 16rpx 0px rgba(160, 160, 160, 0.2);
+  border-radius: 8rpx;
+  margin-top: 40rpx;
+}
+.content-item-nick {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-nicks {
+  display: flex;
+  flex-wrap: wrap;
 }

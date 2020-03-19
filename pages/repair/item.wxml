@@ -38,7 +38,6 @@
           <view class="weui-cell__bd">
            <input class="weui-input" name="code" value="{{item.faultTime}}" type="text" disabled='true'/>
           </view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>
       </view>
       <view class="weui-cells__title">故障描述</view>
@@ -55,10 +54,7 @@
         </view>
       </view>
       <view class='pic-content'>
-        <block wx:for="{{pics}}" wx:for-item="pic" wx:for-index='index'>
-          <image class="each-img" src='{{pic}}'>
-          </image>
-        </block>
+       <l-album urls='{{pics}}'></l-album>
       </view>
       <view class="weui-btn-area">
         <button class="weui-btn" type="primary" form-type="submit">确定</button>

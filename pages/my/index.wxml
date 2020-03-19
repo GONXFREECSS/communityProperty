@@ -3,23 +3,38 @@
   <view class="page__hd">
     <view class="head">
       <view>
-        <navigator wx:if="{{userInfo.nickName}}" url="/pages/my/info">
-          <image src="/img/touxiang.jpg"></image>
+        <navigator wx:if="{{userInfo}}" url="/pages/my/info">
+           <l-avatar size="160" placement="bottom" text="{{userInfo.wechatName?userInfo.wechatName:userInfo.phone}}" src="{{userInfo.wechatAvatar?userInfo.wechatAvatar:'/img/touxiang.jpg'}}" />
         </navigator>
         <navigator class="no-login" wx:else url="/pages/toLogin/toLogin">
           <image src=""></image>
           <text>请先进行登录</text>
         </navigator>
       </view>
-      <view>
-        <text style="color: #fff;">{{userInfo.nickName}}</text>
-      </view>
+      
     </view>
   </view>
   <!--主体-->
   <view class="page__bd">
+  <content-card class="content" name="基本案例">
+      <view class="view-container">
+        <l-grid>
+          <l-grid-item key="one" slot="one">
+            <view class="num">3</view>
+            <view class="text">助力</view>
+          </l-grid-item>
+          <l-grid-item key="two" slot="two">
+            <view class="num">134</view>
+            <view class="text">点赞</view>
+          </l-grid-item>
+          <l-grid-item key="three" slot="three">
+            <view class="num">1648</view>
+            <view class="text">评论</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
     <view class="list">
-
       <view class="page__bd">
         <view class="weui-cells weui-cells_after-title">
           <navigator url="/pages/my/list" class="weui-cell weui-cell_access" hover-class="weui-cell_active">

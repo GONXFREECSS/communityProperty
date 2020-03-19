@@ -4,12 +4,13 @@
     "pages/notice/index",
     "pages/my/index",
     "pages/repair/index",
-    "pages/repair/item"
+    "pages/repair/item",
+    "pages/housing_audit/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fffffe",
-    "navigationBarTitleText": "智慧社区",
+    "navigationBarTitleText": "智慧社区物业端",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
