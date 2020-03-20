@@ -56,7 +56,7 @@ Page({
     } else {
       postData = { isVerify: isVerify, page: that.data.page, limit: that.data.limit, offset: 0 };
     }
-    util.req('/api/sqwuye/family/select', postData, function (data) {
+    util.req('api/sqwuye/admin/isVerify/select', postData, function (data) {
       wx.hideLoading();
       if (!data) {
         that.setData({

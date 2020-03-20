@@ -8,12 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone: '',
+    username: '',
     password: ''
   },
   usernameInput: function (e) {
     this.setData({
-      phone: e.detail.value
+      username: e.detail.value
     })
   },
   passwordInput: function (e) {
@@ -25,7 +25,7 @@ Page({
   formSubmit: function (e) {
     var data = e.detail.value;
     var that = this;
-    util.getReq('api/sqwuye/app/weChat/login', data, function (data) {
+    util.getReq('api/denglu/login', data, function (data) {
       if(data.code==0){
         wx.showToast({
           title: '登录成功',
