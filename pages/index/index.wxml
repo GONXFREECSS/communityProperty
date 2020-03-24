@@ -1,5 +1,6 @@
 <view class="page">
   <!-- 页头 -->
+  <l-dialog />
   <view class="page__hd">
     <ad-swiper indicatorDots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"></ad-swiper>
   </view>
@@ -27,8 +28,18 @@
   <view class="tool-card">
     <l-grid row-num="4" show-row-border="{{false}}">
       <l-grid-item wx:for="{{communityservice}}" wx:key="index" key="{{index}}" slot="{{index}}" l-grid-item="grid-item">
-        <image class="tool-img" src="{{item.img}}" bindtap="{{item.cb}}" />
-        <view class="text">{{item.text}}</view>
+        <block wx:if="{{item.url!=''&&item.url!=null}}">
+          <navigator url="{{item.url}}" hover-class="none" open-type="navigate">
+            <image class="tool-img" src="{{item.img}}" />
+            <view class="text">{{item.text}}</view>
+          </navigator>
+        </block>
+        <block wx:else>
+          <view >
+          <image class="tool-img" src="{{item.img}}" bindtap="not" />
+          <view class="text">{{item.text}}</view>
+          </view>
+        </block>
       </l-grid-item>
     </l-grid>
   </view>

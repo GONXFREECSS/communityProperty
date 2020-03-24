@@ -1,3 +1,6 @@
 {
-    "usingComponents": {}
+    "usingComponents": {
+      "l-dialog":"/dist/dialog/index",
+      "van-button":"/dist/button/index"
+    }
   }

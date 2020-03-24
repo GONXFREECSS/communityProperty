@@ -13,52 +13,28 @@ Page({
     interval: 5000,
     communityservice: [{
         name: 'issue',
-        img: '/img/opendoor.svg',
-        text: '远程开门',
-        cb: 'issue'
+        img: '/img/gonggao.svg',
+        text: '公告管理',
+        url:''
       },
       {
         name: 'car',
-        img: '/img/pwd.svg',
-        text: '动态密码',
-        cb: 'car'
+        img: '/img/shebei.svg',
+        text: '设备管理',
+        url:""
       },
       {
         name: 'houseregistration',
         img: '/img/review.svg',
         text: '房屋审核',
-        cb: 'houseregistration'
+        url:'../housing_audit/index'
       },
       {
         name: 'repair',
         img: '/img/repair.svg',
         text: '报修处理',
-        cb: 'repair'
+        url:"../repair/index"
       },
-      {
-        name: 'issue',
-        img: '/img/opendoor.svg',
-        text: '远程开门',
-        cb: 'issue'
-      },
-      {
-        name: 'car',
-        img: '/img/pwd.svg',
-        text: '动态密码',
-        cb: 'car'
-      },
-      {
-        name: 'houseregistration',
-        img: '/img/review.svg',
-        text: '房屋审核',
-        cb: 'houseregistration'
-      },
-      {
-        name: 'repair',
-        img: '/img/repair.svg',
-        text: '报修处理',
-        cb: 'repair'
-      }
     ],
     notices:[
       {
@@ -79,38 +55,12 @@ Page({
     show: false,
     text: ''
   },
-  isLogin: function() {
-    return new Promise((resolve, reject) => {
-      // 判断是否已经获取过用户信息
-      wx.getSetting({
-        success: function(res) {
-          if (res.authSetting['scope.userInfo']) {
-            resolve(true)
-          } else {
-            resolve(false)
-          }
-        }
-      })
-    })
-  },
-  getAd() {
-    util.req('adv/list', {}, function(res) {
-      if (res.status === 1) {
-        app.globalData.ad = res.list.map(item => {
-          item.cover = app.globalData.URL + item.cover
-          return item
-        })
-      }
-    })
-  },
-  repair: function() {
-    wx.navigateTo({
-      url: '/pages/repair/index',
-    })
-  },
-  houseregistration: function(){
-    wx.navigateTo({
-      url: '/pages/housing_audit/index',
+  not(){
+    wx.lin.showDialog({
+      type:"alert",     
+      title:"温馨提示",
+      content:"此功能正在开发中，敬请期待" ,
+
     })
   },
   onShow: function() {},

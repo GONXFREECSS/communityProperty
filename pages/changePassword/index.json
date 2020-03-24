@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "修改密码",
+  "usingComponents": {
+    "van-field":"/dist/field/index",
+    "van-button":"/dist/button/index",
+    "l-dialog":"/dist/dialog/index",
+    "demo-block":"/dist/demo-block/index",
+    "van-cell":"/dist/cell/index",
+    "van-cell-group":"/dist/cell-group/index"
+  }
+}

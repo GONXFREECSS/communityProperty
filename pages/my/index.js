@@ -22,10 +22,6 @@ Page({
           that.setData({
             userInfo: res.data
           })
-        }else{
-          that.setData({
-            userInfo: app.globalData.userInfo
-          })
         }
       },
       fail: function (res) {

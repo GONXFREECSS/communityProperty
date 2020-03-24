@@ -1,0 +1,16 @@
+<!--pages/changePassword/index.wxml-->
+<l-dialog />
+
+<demo-block>
+    <van-cell-group>
+        <van-field name="oldPassword" type="password"  label="原密码" value="{{oldPassword}}" bind:input="oldPasswordInput" />
+        <van-field value="{{newPassword}}" type="password" label="新密码"  bind:input="newPasswordInput" />
+        <van-field value="{{_newPassword}}" type="password" label="确认新密码" border="{{ false }}" bind:input="_newPasswordInput" />
+    </van-cell-group>
+</demo-block>
+<demo-block title="   ">
+    <van-button type="primary" bind:click="submit" size="large" block custom-class="demo-margin-bottom">
+       <text style="color:white;">提交</text>
+    </van-button>
+</demo-block>
+<l-toast />

@@ -31,3 +31,4 @@
   </slideTab>
   <loadmore mtype="{{mtype}}" hidden="{{hidden}}" nodata_str="已经没有更多了~"></loadmore>
 </view>
+<l-dialog />

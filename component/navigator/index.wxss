@@ -7,7 +7,7 @@
 }
 .scroll-view-x .scroll-view-item{
   display:inline-block;
-  margin:0 75rpx;
+  margin:0 85rpx;
   line-height: 33px;
   cursor: pointer;
 }

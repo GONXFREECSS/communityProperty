@@ -15,12 +15,15 @@ Page({
     windowHeight: ''
   },
   onLoad(options) {
-    this.getList();
     var systemInfo = wx.getSystemInfoSync()
     this.setData({
       windowHeight: systemInfo.windowHeight,
       currentType: options.id ? options.id : 0
     })
+  },
+  onShow(options){
+    this.getList();
+   
   },
   // 点击tab切换 
   swichNav: function (res) {
@@ -96,6 +99,6 @@ Page({
   },
   onReachBottom: function () {
     // 页面上拉触底事件的处理函数
-    getList();
+    
   }
 })

@@ -16,24 +16,6 @@
   </view>
   <!--主体-->
   <view class="page__bd">
-  <content-card class="content" name="基本案例">
-      <view class="view-container">
-        <l-grid>
-          <l-grid-item key="one" slot="one">
-            <view class="num">3</view>
-            <view class="text">助力</view>
-          </l-grid-item>
-          <l-grid-item key="two" slot="two">
-            <view class="num">134</view>
-            <view class="text">点赞</view>
-          </l-grid-item>
-          <l-grid-item key="three" slot="three">
-            <view class="num">1648</view>
-            <view class="text">评论</view>
-          </l-grid-item>
-        </l-grid>
-      </view>
-    </content-card>
     <view class="list">
       <view class="page__bd">
         <view class="weui-cells weui-cells_after-title">
@@ -44,11 +26,11 @@
             <view class="weui-cell__bd">我的门卡</view>
             <view class="weui-cell__ft weui-cell__ft_in-access">{{infoCount}}</view>
           </navigator>
-          <navigator url="/pages/my/order" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <navigator url="/pages/changePassword/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd">
-              <image src="/img/order.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+              <image src="/img/pwd.svg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
-            <view class="weui-cell__bd">我的订单</view>
+            <view class="weui-cell__bd">修改密码</view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
           <navigator url="/pages/my/info" class="weui-cell weui-cell_access" hover-class="weui-cell_active">

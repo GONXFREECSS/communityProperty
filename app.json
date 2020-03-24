@@ -5,7 +5,8 @@
     "pages/my/index",
     "pages/repair/index",
     "pages/repair/item",
-    "pages/housing_audit/index"
+    "pages/housing_audit/index",
+    "pages/changePassword/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -40,6 +41,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

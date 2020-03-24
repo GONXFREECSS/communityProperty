@@ -1,5 +1,12 @@
 {
     "usingComponents": {
-      "l-album":"/dist/album/index"
+      "l-album":"/dist/album/index",
+      "van-field":"/dist/field/index",
+      "van-cell-group":"/dist/cell-group/index",
+      "demo-block":"/dist/demo-block/index",
+      "van-button":"/dist/button/index",
+      "van-image":"/dist/image/index",
+      "van-col":"/dist/col/index",
+      "l-dialog":"/dist/dialog/index"
     }
   }

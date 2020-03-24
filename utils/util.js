@@ -36,7 +36,28 @@ function req(url, data, cb) {
     }
   })
 }
-
+function repair(url, data, cb) {
+  var token = wx.getStorageSync('token')
+  wx.request({
+    url: "http://wwjgzq.natappfree.cc/" + url,
+    data: '\r\n--XXX' +
+    '\r\nContent-Disposition: form-data; name="repairs"' +
+    '\r\n' +
+    '\r\n' + data +
+    '\r\n--XXX--',
+    method: 'post',
+    header: {
+      'Content-Type': 'multipart/form-data; boundary=XXX',
+      'Authorization': token
+    },
+    success: function (res) {
+      return typeof cb == "function" && cb(res.data)
+    },
+    fail: function () {
+      return typeof cb == "function" && cb(false)
+    }
+  })
+}
 function getReq(url, data, cb) {
   var token = wx.getStorageSync('token')
   wx.request({
@@ -161,6 +182,7 @@ module.exports = {
   formatTime: formatTime,
   req: req,
   trim: trim,
+  repair:repair,
   isError: isError,
   clearError: clearError,
   getReq: getReq,

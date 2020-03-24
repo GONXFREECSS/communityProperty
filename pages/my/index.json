@@ -1,6 +1,6 @@
 {
   "disableScroll":true,  
-  "navigationBarTitleText": "我的",
+  "navigationBarTitleText": "个人中心",
   "usingComponents": {
     "l-avatar":"/dist/avatar/index",
     "l-grid":"/dist/grid/index",

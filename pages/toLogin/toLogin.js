@@ -25,25 +25,44 @@ Page({
   formSubmit: function (e) {
     var data = e.detail.value;
     var that = this;
-    util.getReq('api/denglu/login', data, function (data) {
-      if(data.code==0){
-        wx.showToast({
-          title: '登录成功',
-          icon: 'success',
-          duration: 2000
-        })
-        wx.setStorageSync('token',data.token)
-        // var data = {'nickName':'User','img':'/img/touxiang.jpg'}
-        app.setUserInfo(data.rep)
-        console.log(app.globalData.userInfo)
-        wx.switchTab({
-          url: '/pages/index/index'
-        })
-      }else{
+    wx.request({
+      url:"http://9gi8hu.natappfree.cc/api/denglu/login",
+      data:data,
+      success: function (res) {
+        if(res.data.code==0){
+          wx.showToast({
+            title: '登录成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.setStorageSync('token',res.data.token)
+          app.setUserInfo(res.data.rep)
+          console.log(app.globalData.userInfo)
+          wx.switchTab({
+            url: '/pages/index/index'
+          })
+        }
+      },
+      fail: function () {
         
       }
     })
-    util.clearError(that);
+    // util.getReq('api/denglu/login', data, function (data) {
+    //   if(data.code==0){
+    //     wx.showToast({
+    //       title: '登录成功',
+    //       icon: 'success',
+    //       duration: 2000
+    //     })
+    //     wx.setStorageSync('token',data.token)
+    //     var data = {'nickName':'User','img':'/img/touxiang.jpg'}
+    //     app.setUserInfo(data)
+    //     console.log(app.globalData.userInfo)
+    //     wx.switchTab({
+    //       url: '/pages/index/index'
+    //     })
+    //   }
+    // })
 
 
   },

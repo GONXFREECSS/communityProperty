@@ -1,4 +1,4 @@
-<view class="page">
+<!-- <view class="page">
   <view class="page__bd">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
     <form bindsubmit="formSubmit" >
@@ -57,8 +57,36 @@
        <l-album urls='{{pics}}'></l-album>
       </view>
       <view class="weui-btn-area">
-        <button class="weui-btn" type="primary" form-type="submit">确定</button>
+        <l-button disabled="{{true}}">禁用按钮</l-button>
       </view>
     </form>
   </view>
-</view>
+</view> -->
+<l-dialog />
+<demo-block title="报修人信息">
+  <van-cell-group>
+    <van-field value="{{ item.userName }}" label="姓名" readonly="{{true}}" />
+    <van-field value="{{ item.userPhone }}" label="手机号码" border="{{ false }}" readonly="{{true}}" />
+  </van-cell-group>
+</demo-block>
+<demo-block title="报修信息">
+  <van-cell-group>
+    <van-field value="{{ item.code }}" label="设备编号" readonly="{{true}}" />
+    <van-field value="{{ item.faultTime }}" label="故障发生时间" readonly="{{true}}" />
+    <demo-block title="故障描述">
+      <van-cell-group>
+        <van-field value="{{ item.content }}" type="textarea" readonly="{{true}}" autosize border="{{ false }}" />
+      </van-cell-group>
+    </demo-block>
+  </van-cell-group>
+</demo-block>
+<demo-block title="现场图片">
+  <van-col wx:for="{{ pics }}" wx:for-item="img" span="6">
+    <van-image width="100" height="100" src="{{img}}" bindtap="previewImg"/>
+  </van-col>
+</demo-block>
+<demo-block title="   ">
+  <van-button type="primary" disabled="{{disabled}}" bind:click="submit" size="large" block custom-class="demo-margin-bottom">
+    {{text}}
+  </van-button>
+</demo-block>
